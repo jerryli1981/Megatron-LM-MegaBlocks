@@ -98,8 +98,6 @@ def moe_loss_func(loss_mask, output_tensor=None):
 
     # Compute the load balancing loss for all MoE layers.
     megablocks_args = megablocks_utils.arguments.from_megatron(args)
-    import pdb;
-    pdb.set_trace()
     lbl = moe.batched_load_balancing_loss(megablocks_args)
     moe.clear_load_balancing_loss()
 
